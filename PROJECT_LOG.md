@@ -41,6 +41,10 @@ default via --- Hidden ---
 - $ sudo tcpdump -i eth0
 --- Hidden ---
 
+**What broke / confused me:**
+- saw no SYN traffic until I generated it.
+
+  
 **What I learned:**
 - SYN packets only appear when TCP connections are initiated
 - Port scanning is visible and pattern-based
@@ -49,5 +53,6 @@ default via --- Hidden ---
   
 **Open questions:**
 - What the gateway does?
+- I don’t yet understand how nmap decides which ports to scan?
 - How can I distinguish scanning from legitimate multi-connection behavior?
 
