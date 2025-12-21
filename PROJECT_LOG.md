@@ -63,5 +63,31 @@ default via --- Hidden ---
 
 ## Day 2 
 
-# Resuming after a one-day gap. Re-reading logs to re-anchor context
+ Resuming after a one-day gap. Re-reading logs to re-anchor context
 
+**Today's objective:-**
+Identify suspicious TCP connection behavior by counting SYN packets over time.
+
+Questions:- 
+
+When does “many SYN packets” become suspicious?
+- I think that when you get multiple SYN request/packets in a very short span of time(correct me if I am wrong).
+
+Which test did trigger alerts?
+- The tests that triggered alerts were nmap, http and  after generated multiple attempt ssh also.
+
+Which test should not have triggered alerts?
+- Http should not have triggered alert as it was only surfing the web.
+
+**What I learned:**
+- SSH did not trigger alerts because it creates a single long-lived TCP session, not SYN bursts.
+
+**Phase 1 Locked — Summary**
+- Implemented a stateless SYN threshold detector
+- Observed alert flapping due to lack of suppression
+- Legitimate bursty traffic (HTTP) triggered alerts more easily than SSH
+- Threshold-based detection cannot infer intent
+- Conclusion: volume-only detection is insufficient without state/context
+
+
+  
