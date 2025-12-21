@@ -26,8 +26,10 @@ Design and implement a Raspberry Pi–based network monitoring system that passi
 
  I ran few basic commands:
  - $ hostname
+   
 MaXx1212
  - $ ip a
+   
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
       inet 127.0.0.1/8 scope host lo
    --- Hidden ---
@@ -36,9 +38,11 @@ MaXx1212
 3: wlan0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
    --- Hidden ---
  - $ ip r
+   
 default via --- Hidden ---
 
 - $ sudo tcpdump -i eth0
+  
 --- Hidden ---
 
 **What broke / confused me:**
@@ -55,4 +59,9 @@ default via --- Hidden ---
 - What the gateway does?
 - I don’t yet understand how nmap decides which ports to scan?
 - How can I distinguish scanning from legitimate multi-connection behavior?
+
+
+## Day 2 
+
+# Resuming after a one-day gap. Re-reading logs to re-anchor context
 
