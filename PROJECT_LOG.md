@@ -94,7 +94,7 @@ Which test should not have triggered alerts?
 - States should be few. Transitions should be strict.
 
 
-## Phase 2: State Design (No Implementation)
+## Phase 2: Day 1 - State Design (No Implementation) 
 
 **Objective:**
 Design a stateful detection model to address limitations of stateless SYN thresholding.
@@ -137,3 +137,35 @@ Design a stateful detection model to address limitations of stateless SYN thresh
 
  **Status:**
 Phase 2 design completed. Implementation deferred to Day 2.
+
+
+## Day 3
+
+**Today's objective:-** 
+Implement a state machine that changes state only when rules are met, and alerts only when state changes.
+
+**Phase 2 — Day 2: Stateful IDS Implementation**
+
+- The transitions bahaved as expected
+
+- Created a very compact reasoning based code for our system(Many more changes to come + optimizations as well)
+
+- Cooldowns were not observable due to event-driven design
+
+- State transitions only occurred when packets arrived
+
+- Identified need for periodic state evaluation
+
+- BLOCK currently represents a confidence state, not enforcement
+
+
+**Phase 2 locked:**
+
+- Implemented a stateful IDS with time-aware cooldowns and asymmetric escalation.
+
+- System correctly transitions states without packet dependency.
+
+- Identified limitation: lack of protocol context prevents distinguishing benign bursty traffic from malicious behavior.
+
+- Optimization and contextual awareness deferred to Phase 3.
+
