@@ -72,7 +72,7 @@ Questions:-
 
 When does “many SYN packets” become suspicious?
 - I think that when you get multiple SYN request/packets in a very short span of time(correct me if I am wrong).
-
+  
 Which test did trigger alerts?
 - The tests that triggered alerts were nmap, http and  after generated multiple attempt ssh also.
 
@@ -90,7 +90,6 @@ Which test should not have triggered alerts?
 - Conclusion: volume-only detection is insufficient without state/context
 
 **THE CORE PRINCIPLE I JUST LEARNED:**
-
 - States should be few. Transitions should be strict.
 
 
@@ -100,39 +99,22 @@ Which test should not have triggered alerts?
 Design a stateful detection model to address limitations of stateless SYN thresholding.
 
 **States Defined:**
-
 - NORMAL: No recent suspicious behavior
-  
 - WATCH: IP has triggered suspicious behavior but intent is uncertain
-  
 - BLOCK: IP has shown repeated suspicious behavior consistent with abuse
-  
 - State Transition Logic:
-  
   - NORMAL → WATCH: One SYN burst detected
-    
   - WATCH → BLOCK: Three SYN bursts within 60 seconds
-    
   - WATCH → NORMAL: Quiet for 60 seconds
-    
   - BLOCK → WATCH: Quiet for 5–10 minutes
-
 - Design Principles Learned:
-  
   - Alerts should trigger on state transitions, not events
-    
   - Suspicion should decay faster than confirmed malicious behavior
-    
   - Thresholds are triggers, not verdicts
-    
   - Legitimate traffic can appear more aggressive than attacks
-
 - Known Weaknesses (Accepted):
-  
   - Low-and-slow scans can evade burst thresholds
-    
   - Shared IPs (NAT/proxies) can cause false positives
-    
   - Protocol context is not yet considered
 
  **Status:**
