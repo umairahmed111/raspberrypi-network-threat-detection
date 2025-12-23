@@ -145,27 +145,25 @@ Phase 2 design completed. Implementation deferred to Day 2.
 Implement a state machine that changes state only when rules are met, and alerts only when state changes.
 
 **Phase 2 — Day 2: Stateful IDS Implementation**
-
 - The transitions bahaved as expected
-
 - Created a very compact reasoning based code for our system(Many more changes to come + optimizations as well)
-
 - Cooldowns were not observable due to event-driven design
-
 - State transitions only occurred when packets arrived
-
 - Identified need for periodic state evaluation
-
 - BLOCK currently represents a confidence state, not enforcement
 
 
 **Phase 2 locked:**
-
 - Implemented a stateful IDS with time-aware cooldowns and asymmetric escalation.
-
 - System correctly transitions states without packet dependency.
-
 - Identified limitation: lack of protocol context prevents distinguishing benign bursty traffic from malicious behavior.
-
 - Optimization and contextual awareness deferred to Phase 3.
 
+## Day 4
+
+**Phase 3 — Day 1: Context design & integration planning**
+- Designed context rules and classified them into structural, behavioral, and semantic signals. 
+- Defined strict constraints: context must never override the state machine and may only influence thresholds, cooldowns, suspicion weight, and logging.
+- Created a clear integration plan where context exists as a separate layer producing numeric influence rather than decisions.
+- Identified that Phase 3’s purpose is confidence modulation, not classification or enforcement. Accepted protocol blindness as intentional and documented context-related weaknesses and attacker evasion tradeoffs.
+- In Phase 3, we are focusing on one word that is 'Context'. But what exactly is the Context is?
