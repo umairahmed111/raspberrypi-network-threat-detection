@@ -149,3 +149,4 @@ Implement a state machine that changes state only when rules are met, and alerts
 - Created a clear integration plan where context exists as a separate layer producing numeric influence rather than decisions.
 - Identified that Phase 3’s purpose is confidence modulation, not classification or enforcement. Accepted protocol blindness as intentional and documented context-related weaknesses and attacker evasion tradeoffs.
 - In Phase 3, we are focusing on one word that is 'Context'. But what exactly is the Context is?
+- Context are the information we are need to learn a pattern and based on that influence thresholds, cooldowns, suspicion weight, and logging (It does not override the state or give decisions).
