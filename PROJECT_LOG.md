@@ -164,3 +164,6 @@ Implement a state machine that changes state only when rules are met, and alerts
 - Modified burst detection logic to use weighted SYN counts (effective_syns) instead of raw SYN thresholds.
 - Verified that legitimate SSH activity and repeated login attempts do not escalate due to successful handshakes.
 - Verified that SYN floods and port scans escalate faster due to higher context weight.
+- Observed that cooldown behavior remains static and independent of attack severity.
+- Identified design limitation: context currently influences state entry but not state exit or forgiveness.
+- Concluded that additional temporal memory is required for severity-aware cooldowns.
