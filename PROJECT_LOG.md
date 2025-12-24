@@ -153,3 +153,11 @@ Implement a state machine that changes state only when rules are met, and alerts
 
 **The One-Sentence Compression of Phase 3(Just to remember):** 
 - Phase 3 is about adding context that adjusts confidence without ever taking control.
+ 
+
+## Day 5
+
+**Phase 3 — Day 2: Implement structural context (ports + handshake ratio)**
+- Integrated structural context into the existing stateful IDS without modifying the core state machine.
+- Added port concentration tracking to detect multi-port access patterns indicative of scanning behavior.
+- Added handshake completion tracking to differentiate failed connection attempts from legitimate traffic.
