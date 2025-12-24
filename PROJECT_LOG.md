@@ -161,3 +161,6 @@ Implement a state machine that changes state only when rules are met, and alerts
 - Integrated structural context into the existing stateful IDS without modifying the core state machine.
 - Added port concentration tracking to detect multi-port access patterns indicative of scanning behavior.
 - Added handshake completion tracking to differentiate failed connection attempts from legitimate traffic.
+- Modified burst detection logic to use weighted SYN counts (effective_syns) instead of raw SYN thresholds.
+- Verified that legitimate SSH activity and repeated login attempts do not escalate due to successful handshakes.
+- Verified that SYN floods and port scans escalate faster due to higher context weight.
