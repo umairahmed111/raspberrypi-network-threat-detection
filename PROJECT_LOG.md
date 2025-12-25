@@ -167,3 +167,12 @@ Implement a state machine that changes state only when rules are met, and alerts
 - Observed that cooldown behavior remains static and independent of attack severity.
 - Identified design limitation: context currently influences state entry but not state exit or forgiveness.
 - Concluded that additional temporal memory is required for severity-aware cooldowns.
+
+
+  ## Day 6
+
+  **Phase 4 — Day 1: Reputation design & influence mapping**
+  - Defined the purpose of reputation as long-term distrust memory, distinct from detection and state transitions.
+  - Established that reputation accumulates only on confirmed events, not on raw packets.
+  - Designed severity-based reputation growth with repetition amplification to reflect attacker intent over time.
+  - Defined strict decay principles: continuous, severity-dependent, asymptotic decay with no instant forgiveness.
