@@ -169,10 +169,13 @@ Implement a state machine that changes state only when rules are met, and alerts
 - Concluded that additional temporal memory is required for severity-aware cooldowns.
 
 
-  ## Day 6
+## Day 6
 
-  **Phase 4 — Day 1: Reputation design & influence mapping**
-  - Defined the purpose of reputation as long-term distrust memory, distinct from detection and state transitions.
-  - Established that reputation accumulates only on confirmed events, not on raw packets.
-  - Designed severity-based reputation growth with repetition amplification to reflect attacker intent over time.
-  - Defined strict decay principles: continuous, severity-dependent, asymptotic decay with no instant forgiveness.
+**Phase 4 — Day 1: Reputation design & influence mapping**
+ - Defined the purpose of reputation as long-term distrust memory, distinct from detection and state transitions.
+ - Established that reputation accumulates only on confirmed events, not on raw packets.
+ - Designed severity-based reputation growth with repetition amplification to reflect attacker intent over time.
+ - Defined strict decay principles: continuous, severity-dependent, asymptotic decay with no instant forgiveness.
+ - Mapped how reputation influences the state machine indirectly by modifying escalation sensitivity, cooldown duration, de-escalation    resistance, and re-entry friction.
+ - Explicitly prohibited reputation from directly setting states or blocking traffic.
+ - Concluded that Phase 4 implementation should focus on memory and decay only, without modifying existing Phase 2 or Phase 3 files.
