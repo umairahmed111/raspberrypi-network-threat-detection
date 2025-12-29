@@ -71,7 +71,7 @@ Identify suspicious TCP connection behavior by counting SYN packets over time.
 Questions:- 
 
 When does “many SYN packets” become suspicious?
-- I think that when you get multiple SYN request/packets in a very short span of time(correct me if I am wrong).
+- I think that when you get multiple SYN request/packets in a very short span of time(I know I am wrong here but still keeping it and other log statements to remember where I went wrong).
   
 Which test did trigger alerts?
 - The tests that triggered alerts were nmap, http and  after generated multiple attempt ssh also.
