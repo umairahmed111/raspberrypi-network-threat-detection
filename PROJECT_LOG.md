@@ -182,5 +182,11 @@ Implement a state machine that changes state only when rules are met, and alerts
 
 ## Day 7
 
-Resuming after a three-days gap. Re-reading logs to re-anchor where I stopped.
+Resuming after a three-days gap. Re-reading logs to re-anchor where I stopped(Dont take this much long breaks because after that there is a lot to retake and it consumes too much time). 
+
+**Phase 4 — Day 2: Implement Time-Weighted Reputation Memory**
+- Implemented standalone reputation memory with severity-aware decay.
+- Reputation decays continuously and asymptotically.
+- High-severity behavior persists longer than mild behavior.
+- No state machine or detection logic modified.
 
