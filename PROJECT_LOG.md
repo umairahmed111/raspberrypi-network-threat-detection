@@ -190,3 +190,10 @@ Resuming after a three-days gap. Re-reading logs to re-anchor where I stopped(Do
 - High-severity behavior persists longer than mild behavior.
 - No state machine or detection logic modified.
 
+
+## Day 8
+
+**Phase 4 — Day 3: Reputation wiring, observability, and controlled testing**
+- Created a Phase 4–specific detector file to wire reputation memory into the state machine without modifying Phase 3 logic.
+- Integrated reputation memory into burst detection by dynamically adjusting burst thresholds based on historical reputation.
+
