@@ -196,4 +196,13 @@ Resuming after a three-days gap. Re-reading logs to re-anchor where I stopped(Do
 **Phase 4 — Day 3: Reputation wiring, observability, and controlled testing**
 - Created a Phase 4–specific detector file to wire reputation memory into the state machine without modifying Phase 3 logic.
 - Integrated reputation memory into burst detection by dynamically adjusting burst thresholds based on historical reputation.
+- Integrated reputation memory into cooldown logic, making WATCH → NORMAL and BLOCK → WATCH transitions reputation-aware.
+- Ensured reputation increases only on confirmed events (bursts and BLOCK escalation), not on raw packets.
+- Added an observability layer to log IP state, reputation value, and interpreted reputation tier during state transitions.
+- Discovered and corrected a critical decay flaw where reputation could drop to zero after cooldown by introducing a reputation floor derived from historical peak severity.
+- Validated that operational state and trust memory are independent (state can return to NORMAL while reputation remains elevated).
+- Conducted controlled tests using SSH retries, rapid SSH attempts, fast nmap scans, repeat attacks, and silence periods.
+- Verified that repeat attackers escalate faster after cooldown, proving that long-term memory persists across sessions.
+- Identified calibration gaps: lack of timestamps in logs, conservative cooldown multipliers, and subjective reputation tier boundaries.
+- Concluded that Phase 4 architecture is functionally complete, with remaining work limited to calibration and observability improvements rather than structural changes.
 
