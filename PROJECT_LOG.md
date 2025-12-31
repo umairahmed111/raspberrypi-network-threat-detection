@@ -213,6 +213,12 @@ Resuming after a three-days gap. Re-reading logs to re-anchor where I stopped(Do
 **Phase 4 — Day 4: Calibration, observability, and tier-change instrumentation**
 - Continued controlled testing of reputation-aware state transitions using repeated attack and silence scenarios.
 - Identified that WATCH → NORMAL transitions were collapsing too quickly due to improper state timestamp handling.
-
+- Added timestamped logging to all state transitions to enable accurate measurement of cooldown durations.
+- Introduced asymmetric cooldown handling, enforcing stronger inertia for WATCH → NORMAL than BLOCK → WATCH.
+- Implemented reputation tier interpretation (LOW, MEDIUM, HIGH, CRITICAL) as a semantic layer over raw reputation values.
+- Added tier-change detection and logging inside the reputation module, independent of state transitions.
+- Enhanced log clarity by explicitly indicating whether a log entry was triggered by a state change or a tier change.
+- Confirmed that operational state (NORMAL/WATCH/BLOCK) and trust memory (reputation tier) now evolve independently but are both observable.
+- Concluded that Phase 4 functionality is architecturally complete, with remaining work limited to future deployment realism and visualization.
 
 
