@@ -207,3 +207,12 @@ Resuming after a three-days gap. Re-reading logs to re-anchor where I stopped(Do
 - Concluded that Phase 4 architecture is functionally complete, with remaining work limited to calibration and observability improvements rather than structural changes.
 
 **ONE-LINER TO REMEMBER PHASE 4 — DAY 3:** I connected memory to behavior and proved that past actions change future outcomes.
+
+## Day 9
+
+**Phase 4 — Day 4: Calibration, observability, and tier-change instrumentation**
+- Continued controlled testing of reputation-aware state transitions using repeated attack and silence scenarios.
+- Identified that WATCH → NORMAL transitions were collapsing too quickly due to improper state timestamp handling.
+
+
+
