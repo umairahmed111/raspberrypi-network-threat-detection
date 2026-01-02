@@ -229,5 +229,7 @@ Resuming after a three-days gap. Re-reading logs to re-anchor where I stopped(Do
 - Resumed Phase 4 work after a one-day gap and validated the fully integrated reputation-aware state machine under real traffic.
 - Observed and analyzed extended BLOCK → WATCH cooldown behavior for a CRITICAL-tier IP and confirmed it was mathematically correct and policy-driven rather than a bug.
 - Verified that BLOCK → WATCH transition duration scales correctly with reputation tier and cooldown multipliers, resulting in significantly longer parole time for high-severity offenders.
-  
+- Compared behavior across two IPs with different tiers and confirmed consistent, predictable cooldown timing based on tier rather than arbitrary delays.
+- Confirmed that WATCH → NORMAL cooldown behaves proportionally for LOW-tier IPs, allowing faster trust recovery for benign or mildly suspicious behavior.
+- Validated that the system now clearly differentiates between operational state (NORMAL/WATCH/BLOCK) and long-term trust memory (reputation tier).
 
