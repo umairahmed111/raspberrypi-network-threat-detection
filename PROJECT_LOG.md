@@ -223,4 +223,11 @@ Resuming after a three-days gap. Re-reading logs to re-anchor where I stopped(Do
 
 **ONE-LINER TO REMEMBER TODAY:** Today I fixed memory timing bugs and made trust evolution observable and explainable.
 
+## Day 10
+
+**Phase 4 — Day 5: Calibration validation & behavioral interpretation**
+- Resumed Phase 4 work after a one-day gap and validated the fully integrated reputation-aware state machine under real traffic.
+- Observed and analyzed extended BLOCK → WATCH cooldown behavior for a CRITICAL-tier IP and confirmed it was mathematically correct and policy-driven rather than a bug.
+- Verified that BLOCK → WATCH transition duration scales correctly with reputation tier and cooldown multipliers, resulting in significantly longer parole time for high-severity offenders.
+  
 
